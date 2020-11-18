@@ -15,6 +15,18 @@
 		FABC8E7C25628956007F39AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABC8E7A25628956007F39AD /* LaunchScreen.storyboard */; };
 		FABC8E8725628956007F39AD /* CloneWeatherAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8E8625628956007F39AD /* CloneWeatherAPPTests.swift */; };
 		FABC8E9225628957007F39AD /* CloneWeatherAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8E9125628957007F39AD /* CloneWeatherAPPUITests.swift */; };
+		FABC8EAC25629110007F39AD /* WeatherList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABC8EAB25629110007F39AD /* WeatherList.storyboard */; };
+		FABC8EB12562923B007F39AD /* WeatherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EB02562923B007F39AD /* WeatherListViewController.swift */; };
+		FABC8EB62562CA96007F39AD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EB52562CA96007F39AD /* Weather.swift */; };
+		FABC8EBB2562CAD4007F39AD /* FiveDayWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EBA2562CAD4007F39AD /* FiveDayWeather.swift */; };
+		FABC8EC02562CAEC007F39AD /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EBF2562CAEC007F39AD /* Coordinate.swift */; };
+		FABC8EC625635FCC007F39AD /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EC525635FCC007F39AD /* BaseURL.swift */; };
+		FABC8ECB25635FD7007F39AD /* APICenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8ECA25635FD7007F39AD /* APICenter.swift */; };
+		FABC8ED025635FEF007F39AD /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8ECF25635FEF007F39AD /* APIRequest.swift */; };
+		FABC8ED525636DAF007F39AD /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8ED425636DAF007F39AD /* APIResponse.swift */; };
+		FABC8EDA25640072007F39AD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8ED925640072007F39AD /* APIError.swift */; };
+		FABC8EE02564E325007F39AD /* Enum+FahrenheitOrCelsius.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EDF2564E325007F39AD /* Enum+FahrenheitOrCelsius.swift */; };
+		FABC8EEB2564E8A7007F39AD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8EEA2564E8A7007F39AD /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,18 @@
 		FABC8E8D25628957007F39AD /* CloneWeatherAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloneWeatherAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABC8E9125628957007F39AD /* CloneWeatherAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloneWeatherAPPUITests.swift; sourceTree = "<group>"; };
 		FABC8E9325628957007F39AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABC8EAB25629110007F39AD /* WeatherList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherList.storyboard; sourceTree = "<group>"; };
+		FABC8EB02562923B007F39AD /* WeatherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewController.swift; sourceTree = "<group>"; };
+		FABC8EB52562CA96007F39AD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		FABC8EBA2562CAD4007F39AD /* FiveDayWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayWeather.swift; sourceTree = "<group>"; };
+		FABC8EBF2562CAEC007F39AD /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		FABC8EC525635FCC007F39AD /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		FABC8ECA25635FD7007F39AD /* APICenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICenter.swift; sourceTree = "<group>"; };
+		FABC8ECF25635FEF007F39AD /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		FABC8ED425636DAF007F39AD /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		FABC8ED925640072007F39AD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FABC8EDF2564E325007F39AD /* Enum+FahrenheitOrCelsius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+FahrenheitOrCelsius.swift"; sourceTree = "<group>"; };
+		FABC8EEA2564E8A7007F39AD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +123,11 @@
 		FABC8E6E25628953007F39AD /* CloneWeatherAPP */ = {
 			isa = PBXGroup;
 			children = (
+				FABC8EDE2564E2EA007F39AD /* Helper */,
+				FABC8EC425635FAD007F39AD /* Networking */,
+				FABC8EA725629052007F39AD /* Controller */,
+				FABC8EA62562904B007F39AD /* Model */,
+				FABC8EA52562903F007F39AD /* View */,
 				FABC8E6F25628953007F39AD /* AppDelegate.swift */,
 				FABC8E7125628953007F39AD /* SceneDelegate.swift */,
 				FABC8E7325628953007F39AD /* ViewController.swift */,
@@ -126,6 +155,101 @@
 				FABC8E9325628957007F39AD /* Info.plist */,
 			);
 			path = CloneWeatherAPPUITests;
+			sourceTree = "<group>";
+		};
+		FABC8EA52562903F007F39AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EA82562906C007F39AD /* Weather */,
+				FABC8EA925629073007F39AD /* Search */,
+				FABC8EAA2562907C007F39AD /* CurrentWeather */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FABC8EA62562904B007F39AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EB52562CA96007F39AD /* Weather.swift */,
+				FABC8EBA2562CAD4007F39AD /* FiveDayWeather.swift */,
+				FABC8EBF2562CAEC007F39AD /* Coordinate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FABC8EA725629052007F39AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EB02562923B007F39AD /* WeatherListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FABC8EA82562906C007F39AD /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EAB25629110007F39AD /* WeatherList.storyboard */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		FABC8EA925629073007F39AD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FABC8EAA2562907C007F39AD /* CurrentWeather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CurrentWeather;
+			sourceTree = "<group>";
+		};
+		FABC8EC425635FAD007F39AD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EC525635FCC007F39AD /* BaseURL.swift */,
+				FABC8ECA25635FD7007F39AD /* APICenter.swift */,
+				FABC8ECF25635FEF007F39AD /* APIRequest.swift */,
+				FABC8ED425636DAF007F39AD /* APIResponse.swift */,
+				FABC8ED925640072007F39AD /* APIError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FABC8EDE2564E2EA007F39AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EE92564E339007F39AD /* Protocol */,
+				FABC8EE82564E332007F39AD /* Enum */,
+				FABC8EE42564E32A007F39AD /* Extension */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FABC8EE42564E32A007F39AD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FABC8EE82564E332007F39AD /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EDF2564E325007F39AD /* Enum+FahrenheitOrCelsius.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		FABC8EE92564E339007F39AD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FABC8EEA2564E8A7007F39AD /* UserInfo.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABC8E7C25628956007F39AD /* LaunchScreen.storyboard in Resources */,
+				FABC8EAC25629110007F39AD /* WeatherList.storyboard in Resources */,
 				FABC8E7925628956007F39AD /* Assets.xcassets in Resources */,
 				FABC8E7725628953007F39AD /* Main.storyboard in Resources */,
 			);
@@ -258,9 +383,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABC8EC02562CAEC007F39AD /* Coordinate.swift in Sources */,
 				FABC8E7425628953007F39AD /* ViewController.swift in Sources */,
+				FABC8EB12562923B007F39AD /* WeatherListViewController.swift in Sources */,
+				FABC8ECB25635FD7007F39AD /* APICenter.swift in Sources */,
+				FABC8EE02564E325007F39AD /* Enum+FahrenheitOrCelsius.swift in Sources */,
 				FABC8E7025628953007F39AD /* AppDelegate.swift in Sources */,
+				FABC8EDA25640072007F39AD /* APIError.swift in Sources */,
+				FABC8ED525636DAF007F39AD /* APIResponse.swift in Sources */,
 				FABC8E7225628953007F39AD /* SceneDelegate.swift in Sources */,
+				FABC8EB62562CA96007F39AD /* Weather.swift in Sources */,
+				FABC8EC625635FCC007F39AD /* BaseURL.swift in Sources */,
+				FABC8ED025635FEF007F39AD /* APIRequest.swift in Sources */,
+				FABC8EEB2564E8A7007F39AD /* UserInfo.swift in Sources */,
+				FABC8EBB2562CAD4007F39AD /* FiveDayWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
