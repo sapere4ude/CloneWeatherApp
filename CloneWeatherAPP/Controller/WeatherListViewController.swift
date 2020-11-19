@@ -22,9 +22,53 @@ class WeatherListViewController: UIViewController {
             }
         }
     }
-    private var fahrenheitOrCelsius: fahrenheigtOrCelsius? = UserInfo
+    private var fahrenheitOrCelsius: FahrenheitOrCelsius? = UserInfo.getFahrenheitOrCelsius() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private var myCities: [Coordinate] = [Coordinate]() {
+        didSet {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.myCities),
+                                      forKey: UserInfo.cities
+            )
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     
+    private lazy var refreshControl: UIRefreshControl = {   // 새로고침을 만드는 메서드. lazy로 만들었기때문에 호출되는 시점에 사용되는 것.
+                                                            // lazy를 사용하기 위해선? -> 1. 반드시 var와 함께 사용 2. struct,class에서만 사용 등등
+       let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshData),
+                                 for: .valueChanged
+        )
+        refreshControl.tintColor = UIColor.black
+        return refreshControl
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCoordinate()
+    }
+    
+    @objc private func refreshData() {
+        guard let coordinate = currentLocation?.coordinate else {
+            return
+        }
+        
+        weather.removeAll()
+        DispatchQueue.global().async {
+            self.getWeatherByCoordinate(latitude: coordinate.latitude.makeRound(),
+                                        longitude: coordinate.longitude.makeRound())
+            self.fetchCityList()
+        }
+    }
     
     
     
