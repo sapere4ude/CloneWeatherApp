@@ -57,8 +57,15 @@ class WeatherListViewController: UIViewController {
         getCoordinate()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    
+    
+    
     @objc private func refreshData() {
-        guard let coordinate = currentLocation?.coordinate else {
+        guard let coordinate = currentLocation?.coordinate else {   // ?. <- 옵셔널 체이닝 확인할것
             return
         }
         
@@ -66,14 +73,35 @@ class WeatherListViewController: UIViewController {
         DispatchQueue.global().async {
             self.getWeatherByCoordinate(latitude: coordinate.latitude.makeRound(),
                                         longitude: coordinate.longitude.makeRound())
-            self.fetchCityList()
+            self.fetchCityList()    // fetch : (어딘가에서)가져오다
         }
     }
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    private func getCoordinate() {
+        locationManager.requestWhenInUseAuthorization()
     }
+    
+    private func getWeatherByCoordinate(latitude lat: Double, longitude lon: Double) {
+        let parameters: [String: Any] = [
+            "lat" : "\(lat)",
+            "lon" : "\(lon)",
+            "appid" : weatherAPIKey
+        ]
+        
+        let request = APIRequest(method: .get,
+                                 path: BasePath.list,
+                                 queryItems: parameters)
+        APICenter().performSync(urlString: BaseURL.weatherURL, request: request){ [weak self] (result) in   // weak self : 약한참조로 만들어주기 위해 사용
+            guard let self = self else {
+                return
+            }
+            switch result {
+            case .success(let response):
+                if let response = try?  // 여기부터 시작할 것. weak self부터 타고타고 넘어가는 부분에 대한 것 질문해보기
+            }
+            
+        }
+        
+    }
+    
 }
