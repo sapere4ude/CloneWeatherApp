@@ -22,7 +22,7 @@ struct APIResponse<Body> {
 
 //Mark: APIResponse Extension <- 이해가 안됨... 제네릭 + 데이터 개념 다시 공부하기
 extension APIResponse where Body == Data? {
-    func deocode<T: Decodable>(to type: T.Type) throws -> APIResponse<T> {  // throws : 오류를 처리해주는 곳으로 전달하는 역할
+    func decode<T: Decodable>(to type: T.Type) throws -> APIResponse<T> {  // throws : 오류를 처리해주는 곳으로 전달하는 역할
         guard let data = body else {
             throw APIError.dataFailed
         }

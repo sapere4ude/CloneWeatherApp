@@ -73,7 +73,7 @@ class WeatherListViewController: UIViewController {
         DispatchQueue.global().async {
             self.getWeatherByCoordinate(latitude: coordinate.latitude.makeRound(),
                                         longitude: coordinate.longitude.makeRound())
-            self.fetchCityList()    // fetch : (어딘가에서)가져오다
+            //self.fetchCityList()    // fetch : (어딘가에서)가져오다
         }
     }
     
@@ -97,11 +97,31 @@ class WeatherListViewController: UIViewController {
             }
             switch result {
             case .success(let response):
-                if let response = try?  // 여기부터 시작할 것. weak self부터 타고타고 넘어가는 부분에 대한 것 질문해보기
+                if let response = try? response.decode(to: WeatherInfo.self) {
+                    self.checkCurrentLocationOrNot(bodyData: response.body)
+                    DispatchQueue.main.async {
+                        self.refreshControl.endRefreshing()
+                    }
+                } else {
+                    print(APIError.decodingFailed)
+                }
+            case .failure:
+                print(APIError.networkFailed)
             }
-            
         }
-        
+    }
+    
+    private func checkCurrentLocationOrNot(bodyData: WeatherInfo) {
+        guard let coordinate = currentLocation?.coordinate else {
+            if !allowPermisson {
+                weather.append(bodyData)
+            }
+            return
+        }
+        if bodyData.name == weather.first?.name {
+            return
+        }
+        if coordinate.latitude.makeRound()
     }
     
 }
