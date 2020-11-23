@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FAABDF81256959A4009B1291 /* Extension+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABDF80256959A4009B1291 /* Extension+Double.swift */; };
+		FAABDF86256AA103009B1291 /* Enum+WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABDF85256AA103009B1291 /* Enum+WeatherList.swift */; };
+		FAABDF8B256B6880009B1291 /* Extension+Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABDF8A256B687F009B1291 /* Extension+Notification.Name.swift */; };
+		FAABDF90256B691F009B1291 /* NotificationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAABDF8F256B691F009B1291 /* NotificationKeys.swift */; };
 		FABC8E7025628953007F39AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8E6F25628953007F39AD /* AppDelegate.swift */; };
 		FABC8E7225628953007F39AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8E7125628953007F39AD /* SceneDelegate.swift */; };
 		FABC8E7425628953007F39AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC8E7325628953007F39AD /* ViewController.swift */; };
@@ -49,6 +52,9 @@
 
 /* Begin PBXFileReference section */
 		FAABDF80256959A4009B1291 /* Extension+Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Double.swift"; sourceTree = "<group>"; };
+		FAABDF85256AA103009B1291 /* Enum+WeatherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+WeatherList.swift"; sourceTree = "<group>"; };
+		FAABDF8A256B687F009B1291 /* Extension+Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Notification.Name.swift"; sourceTree = "<group>"; };
+		FAABDF8F256B691F009B1291 /* NotificationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationKeys.swift; sourceTree = "<group>"; };
 		FABC8E6C25628953007F39AD /* CloneWeatherAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloneWeatherAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABC8E6F25628953007F39AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABC8E7125628953007F39AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				FAABDF80256959A4009B1291 /* Extension+Double.swift */,
+				FAABDF8A256B687F009B1291 /* Extension+Notification.Name.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				FABC8EDF2564E325007F39AD /* Enum+FahrenheitOrCelsius.swift */,
+				FAABDF85256AA103009B1291 /* Enum+WeatherList.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 		FABC8EE92564E339007F39AD /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				FAABDF8F256B691F009B1291 /* NotificationKeys.swift */,
 				FABC8EEA2564E8A7007F39AD /* UserInfo.swift */,
 			);
 			path = Protocol;
@@ -396,10 +405,12 @@
 			files = (
 				FABC8EC02562CAEC007F39AD /* Coordinate.swift in Sources */,
 				FABC8E7425628953007F39AD /* ViewController.swift in Sources */,
+				FAABDF90256B691F009B1291 /* NotificationKeys.swift in Sources */,
 				FABC8EB12562923B007F39AD /* WeatherListViewController.swift in Sources */,
 				FABC8ECB25635FD7007F39AD /* APICenter.swift in Sources */,
 				FABC8EE02564E325007F39AD /* Enum+FahrenheitOrCelsius.swift in Sources */,
 				FABC8E7025628953007F39AD /* AppDelegate.swift in Sources */,
+				FAABDF8B256B6880009B1291 /* Extension+Notification.Name.swift in Sources */,
 				FABC8EDA25640072007F39AD /* APIError.swift in Sources */,
 				FABC8ED525636DAF007F39AD /* APIResponse.swift in Sources */,
 				FABC8E7225628953007F39AD /* SceneDelegate.swift in Sources */,
@@ -407,6 +418,7 @@
 				FABC8EB62562CA96007F39AD /* Weather.swift in Sources */,
 				FABC8EC625635FCC007F39AD /* BaseURL.swift in Sources */,
 				FABC8ED025635FEF007F39AD /* APIRequest.swift in Sources */,
+				FAABDF86256AA103009B1291 /* Enum+WeatherList.swift in Sources */,
 				FABC8EEB2564E8A7007F39AD /* UserInfo.swift in Sources */,
 				FABC8EBB2562CAD4007F39AD /* FiveDayWeather.swift in Sources */,
 			);

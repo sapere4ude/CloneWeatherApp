@@ -62,7 +62,55 @@ class WeatherListViewController: UIViewController {
 
     }
     
+    private func fetchCityList() {
+        guard let cities = UserInfo.getCityList() else {
+            return
+        }
+        myCities = cities
+        DispatchQueue.global().async {
+            self.myCities.forEach({
+                self.getWeatherByCoordinate(latitude: $0.lat,
+                                            longitude: $0.lon)
+                
+            })
+        }
+    }
     
+    // 79 - 99 공부하기. 아직 안봤음.
+    private func setupViewController() {
+        tableView.addSubview(refreshControl)
+        registerForPreviewing(with: self, sourceView: tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        locationManager.delegate = self
+    }
+    
+    private func registerNib() {
+        tableView.register(WeatherListTableViewCell.self)
+        tableView.register(WeatherListSettingTableViewCell.self)
+    }
+    
+    private func createObserver() {
+        // NotificationCenter : notification의 중계자 역할
+        // addObserver의 name이라는 키 값을 탐지. ".selectCity"라는 name의 notification이 오면 selector를 실행
+        // NotificationCenter는 싱글턴 인스턴스라서 여러 오브젝트에 공유됨. 그래서 옵저버를 등록한 오브젝트가 메모리에서 해제되면 NSNotificationCenter에서도 옵저버를 없앴다고 알려줘야한다.
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(selectedCity),
+                                               name: .selectCity,
+                                               object: nil
+        )
+    }
+    
+    @objc private func selectedCity(notification: NSNotification) {
+        guard let cityCoordinate = notification.object as? CLLocationCoordinate2D else {    // as? <- 다운캐스팅
+            return
+        }
+        if !myCities.contains(Coordinate(lat: cityCoordinate.latitude.makeRound(), lon: cityCoordinate.longitude.makeRound())){
+            getWeatherByCoordinate(latitude: cityCoordinate.latitude, longitude: cityCoordinate.longitude)
+            
+            myCities.append(Coordinate(lat: cityCoordinate.latitude.makeRound(), lon: cityCoordinate.longitude.makeRound()))
+        }
+    }
     
     @objc private func refreshData() {
         guard let coordinate = currentLocation?.coordinate else {   // ?. <- 옵셔널 체이닝 확인할것
@@ -112,8 +160,8 @@ class WeatherListViewController: UIViewController {
     }
     
     private func checkCurrentLocationOrNot(bodyData: WeatherInfo) {
-        guard let coordinate = currentLocation?.coordinate else {
-            if !allowPermisson {
+        guard let coordinate = currentLocation?.coordinate else {   // coordinate = cuurentLocation?.coordinate가 아니라면 { } 구문 수행. 맞다면? bodyData.name 부분 실행
+            if !allowPermisson {    // true라면 weather라는 이름의 배열에 데이터를 추가해준다.
                 weather.append(bodyData)
             }
             return
@@ -121,7 +169,31 @@ class WeatherListViewController: UIViewController {
         if bodyData.name == weather.first?.name {
             return
         }
-        if coordinate.latitude.makeRound()
+        if coordinate.latitude.makeRound() == bodyData.coord.lat,
+           coordinate.longitude.makeRound() == bodyData.coord.lon {
+            weather.insert(bodyData, at: 0)
+        } else {
+            weather.append(bodyData)
+        }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self) // self에 등록된 옵저버 전체 제거
+    }
+    
+}
+
+// MARK : TableView Delegate and Datasource
+extension WeatherListViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return WeatherListCellType.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 }

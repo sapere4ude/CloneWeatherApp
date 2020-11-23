@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum WeatherListCellType: Int {
+    case City = 0
+    case Setting
+}
+
+extension WeatherListCellType: CaseIterable {}  // caseIterable 찾아보기
